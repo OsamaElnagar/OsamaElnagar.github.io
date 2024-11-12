@@ -1,35 +1,38 @@
-
 html,
 body {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
 }
 
 body {
-    background-color: #FFFFFF;
+  background-color: #000;
 }
 
 body.theme-dark {
-    background-color: #111;
+  background-color: #111;
 }
-
 
 /* Loader */
 .preloader {
   position: fixed;
   inline-size: 100%;
   block-size: 100%;
-  background-color: #fff;
+  background-color: #000;
   display: grid;
   place-items: center;
 }
 
 .theme-dark .preloader {
-  background-color: #111;
-  color: #FFF;
+  background-color: #000;
+  color: #fff;
 }
 
-@media (max-width: 1199px) {.header {display: none}}
+@media (max-width: 1199px) {
+  .header {
+    display: none;
+  }
+}
 
 .preloader-img {
   animation: animloaderimg 3000ms ease-in-out infinite;
@@ -65,7 +68,7 @@ body.theme-dark {
   border-radius: 50rem;
 }
 .theme-dark .preloader .loader::after {
-  background: #FFF;
+  background: #fff;
 }
 .header {
   position: fixed;
@@ -75,7 +78,7 @@ body.theme-dark {
 }
 .theme-dark .header {
   background-color: #222;
-  color: #FFF;
+  color: #fff;
 }
 .header-container {
   max-inline-size: 1200px;
@@ -88,7 +91,7 @@ body.theme-dark {
 
 .theme-dark .header-container {
   background-color: #222;
-  color: #FFF;
+  color: #fff;
 }
 .header .logo {
   max-height: 30px;
@@ -96,7 +99,7 @@ body.theme-dark {
 .placeholder {
   block-size: 0.825rem;
   inline-size: 3rem;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border-radius: 0.3rem;
 }
 .theme-dark .placeholder {
