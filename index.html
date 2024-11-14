@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Personal Flutter Developer Portfolio.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Portfolio">
+  <link rel="apple-touch-icon" href="logo.jpg">
+  <link rel="icon" type="image/png" href="logo.jpg"/>
+  <title>Osama M. Elngar | Flutter Developer Portfolio</title>
+  <link rel="manifest" href="manifest.json">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+<!-- Preloader Content -->
+<div id="preloader" class="fixed inset-0 bg-gray-900 flex items-center justify-center z-50">
+  <div class="flex flex-col items-center gap-5">
+    <img src="logo.jpg" alt="Logo" class="w-36 animate-bounce">
+    <span class="text-blue-300 text-lg font-medium">Loading Your Experience...</span>
+    <div class="loader"></div> <!-- Loader line -->
+  </div>
+</div>
+
+<!-- Main content (hidden until loaded) -->
+<div id="content" class="hidden">
+  <!-- Main content will be shown here after loading completes -->
+</div>
+
+<!-- Flutter Bootstrap Script -->
+<script src="flutter_bootstrap.js" async></script>
+
+<!-- Script to Hide Preloader on flutter-first-frame Event -->
+<script>
+  function hidePreloader() {
+    document.getElementById('preloader').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  }
+  window.addEventListener("flutter-first-frame", hidePreloader);
+</script>
+
+<!-- Custom CSS for Loader Animation -->
+<style>
+  /* Keyframe Animation */
+  @keyframes move {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Loader Container */
+  .loader {
+    width: 140px; /* Full width of the loader bar */
+    height: 6px; /* Height of the loader bar */
+    background: rgba(255, 255, 255, 0.1); /* Subtle background */
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Moving Part of the Loader */
+  .loader::after {
+    content: "";
+    width: 50%; /* Adjust this to control the width of the moving part */
+    height: 100%;
+    background: #8ac4ff; /* Color of the moving loader */
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    animation: move 1.5s linear infinite; /* Smooth infinite animation */
+  }
+</style>
+</body>
+</html>
