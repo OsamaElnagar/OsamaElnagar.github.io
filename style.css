@@ -1,0 +1,109 @@
+/* Body and Preloader Base Styles */
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #111;
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+}
+
+body.theme-dark {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+/* Preloader Styling */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  display: grid;
+  place-items: center;
+  color: #e0e0e0;
+  z-index: 9999;
+}
+
+.preloader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Preloader Image Animation */
+.preloader-img {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Loader Text */
+.loader-text {
+  font-size: 1.1rem;
+  color: #8ac4ff;
+  font-weight: 500;
+}
+
+/* Loader Bar */
+.loader {
+  width: 140px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader::after {
+  content: "";
+  width: 30px;
+  height: 100%;
+  background: #8ac4ff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  animation: animloader 1.5s linear infinite;
+}
+
+/* Keyframe Animations */
+@keyframes animloader {
+  0% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: #e0e0e0;
+}
+
+p {
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+a {
+  color: #8ac4ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #acd2ff;
+  text-decoration: underline;
+}
